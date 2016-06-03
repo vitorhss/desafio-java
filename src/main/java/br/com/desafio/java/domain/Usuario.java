@@ -2,6 +2,7 @@ package br.com.desafio.java.domain;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -29,8 +30,7 @@ public class Usuario {
 	@NotNull
 	private String password;
 	
-	@JoinColumn(name = "phone_id", updatable = false)
-	@OneToMany(fetch  = FetchType.EAGER)
+	@OneToMany( cascade = CascadeType.ALL ,fetch  = FetchType.EAGER)
 	private List<Phone> phones;
 
 	public Integer getId() {
@@ -64,7 +64,8 @@ public class Usuario {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
+	
+	@NotNull
 	public List<Phone> getPhones() {
 		return phones;
 	}
