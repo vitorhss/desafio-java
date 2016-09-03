@@ -36,6 +36,6 @@ public class UsuarioRest extends AbstractRest {
 	
 	@ExceptionHandler(BusinessException.class)
 	public ResponseEntity<ErrorVO> validationError(BusinessException exception){
-		return new ResponseEntity<ErrorVO>(new ErrorVO("Erro de negócio", exception.getMessage()), HttpStatus.BAD_REQUEST);
+		return new ResponseEntity<ErrorVO>(new ErrorVO("Erro de negocio", exception.getMessage()), HttpStatus.BAD_REQUEST);
 	}
 }

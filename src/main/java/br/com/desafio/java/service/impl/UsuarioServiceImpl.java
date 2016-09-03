@@ -24,9 +24,9 @@ public class UsuarioServiceImpl implements UsuarioService {
 	@Override
 	public MessageVO cadastrar(Usuario usuario) {
 		if (usuarioRepository.findByEmail(usuario.getEmail()) !=null){
-			throw new BusinessException("Já existe um usuário para o e-mail informado");
+			throw new BusinessException("Ja existe um usuario para o e-mail informado");
 		}
-		usuarioRepository.save(usuario);
+		Usuario usuarioCadastrado = usuarioRepository.save(usuario);
 		return new MessageVO("Sucesso", "Usuario Cadastrado com Sucesso");
 	}
 }
