@@ -14,3 +14,4 @@ application.pid
 application.port
 .vagrant/
 /target/
+build/
